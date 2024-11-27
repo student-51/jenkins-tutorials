@@ -5,7 +5,7 @@ pipeline {
 		fname = "KAMAL"
 		}
 	stages {
-		stage ('one') {
+		stage ('if else') {
 			steps {
 				echo "${fname}"
 				script {
@@ -17,16 +17,18 @@ pipeline {
 						echo 'I am inside the else block. '
 					}
 				}
+			}
+		}
+		stage ('try catch') {
 				script {
 					echo 'try and catch'
 					try{
 						sh 'I am here.'
 					}
-					else{
+					catch(e){
 						echo 'Error has occured'
 					}
-				}
-			}
+				}		
 		}	
 	}
 }
