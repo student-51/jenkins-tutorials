@@ -20,6 +20,7 @@ pipeline {
 			}
 		}
 		stage ('try catch') {
+			steps{
 				script {
 					echo 'try and catch'
 					try{
@@ -28,7 +29,8 @@ pipeline {
 					catch(e){
 						echo 'Error has occured'
 					}
-				}		
+				}
+			}
 		}	
 	}
 }
