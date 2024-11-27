@@ -18,6 +18,7 @@ pipeline {
 					}
 				}
 				script {
+					echo 'try and catch'
 					try{
 						sh 'I am here.'
 					}
