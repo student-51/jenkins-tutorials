@@ -3,16 +3,18 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                bat 'python -V'
+                bat 'java --version'
             }
         }
     }
  post {
         always {
             echo 'Always'
+            bat 'echo Always'
         }
         success {
             echo 'Only on SUCCESS'
+            bat 'echo Only on SUCCESS'
         }
         failure {
             echo 'Only on Failure'
