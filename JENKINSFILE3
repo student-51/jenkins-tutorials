@@ -8,12 +8,14 @@ pipeline {
         }
         stage('build') {
             steps {
-                if(branchName == "main"){
-                    println("Deploying to Prod.")
-                 }
-                 else if(branchName == "test"){
-                    println("Deploying to Test.")
-                 }
+                script{
+                    if(branchName == "main"){
+                        println("Deploying to Prod.")
+                     }
+                     else if(branchName == "test"){
+                        println("Deploying to Test.")
+                     }
+                }
                 bat 'echo Build in progress.'
             }
         }
