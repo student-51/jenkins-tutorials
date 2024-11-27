@@ -9,7 +9,7 @@ pipeline {
         stage('build') {
             steps {
                 script{
-                    if(env.BRANCH_NAME == "main"){
+                    if("main" == "main"){
                         bat 'echo Deploying to Prod.'
                      }
                      else if(env.BRANCH_NAME == "test"){
