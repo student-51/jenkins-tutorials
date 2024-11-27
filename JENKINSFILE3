@@ -9,10 +9,10 @@ pipeline {
         stage('build') {
             steps {
                 script{
-                    if(branchName == "main"){
+                    if(${env.BRANCH_NAME} == "main"){
                         println("Deploying to Prod.")
                      }
-                     else if(branchName == "test"){
+                     else if(${env.BRANCH_NAME} == "test"){
                         println("Deploying to Test.")
                      }
                 }
